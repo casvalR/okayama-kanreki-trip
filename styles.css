@@ -1176,6 +1176,11 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 20px;
+  align-items: stretch;
+}
+
+/* When any card is expanded, stop stretching other cards */
+.food-cards:has(.food-card.is-expanded) {
   align-items: start;
 }
 
@@ -1211,6 +1216,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   position: relative;
+  flex: 1 0 auto;
   transition: background-color var(--transition);
 }
 
