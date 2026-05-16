@@ -1914,9 +1914,22 @@ a:hover {
 }
 
 /* ============ Closing Message ============ */
+.closing-section {
+  background: linear-gradient(180deg, transparent 0%, rgba(178, 62, 62, 0.06) 50%, rgba(200, 164, 100, 0.1) 100%);
+  padding: clamp(60px, 8vw, 100px) 0;
+}
+
 .closing-message {
   text-align: center;
   padding: 40px 20px;
+}
+
+.closing-signature {
+  margin-top: 24px;
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--color-text-soft);
+  letter-spacing: 0.08em;
 }
 
 .closing-frame {
