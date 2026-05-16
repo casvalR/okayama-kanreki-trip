@@ -793,6 +793,223 @@ a:hover {
   color: var(--color-text-muted);
 }
 
+/* ============ Amenity Section ============ */
+.amenity-section {
+  background: linear-gradient(180deg, transparent, rgba(232, 212, 168, 0.12));
+}
+
+.amenity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.amenity-card {
+  background: #FFF;
+  border-radius: var(--radius-md);
+  padding: 28px;
+  box-shadow: 0 4px 20px var(--color-shadow);
+  border: 1px solid var(--color-line-soft);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.amenity-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-accent));
+}
+
+.amenity-card-ryokan::before {
+  background: linear-gradient(90deg, #4A8DAC, #2E6B8A);
+}
+
+.amenity-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 36px var(--color-shadow-deep);
+}
+
+.amenity-card-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed var(--color-line);
+}
+
+.amenity-card-icon {
+  font-size: 36px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.amenity-card-headline {
+  flex: 1;
+}
+
+.amenity-card-day {
+  font-family: var(--font-serif);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  margin-bottom: 4px;
+}
+
+.amenity-card-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 19px;
+  color: var(--color-ink);
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+
+.amenity-card-room {
+  font-size: 12.5px;
+  color: var(--color-text-muted);
+}
+
+.amenity-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.amenity-group-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--color-accent-deep);
+  margin-bottom: 8px;
+  padding-left: 10px;
+  border-left: 3px solid var(--color-gold);
+  letter-spacing: 0.05em;
+}
+
+.amenity-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.amenity-list li {
+  font-size: 13px;
+  color: var(--color-text-soft);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.7;
+}
+
+.amenity-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-gold-deep);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.amenity-card-note {
+  font-size: 11.5px;
+  color: var(--color-text-muted);
+  margin: 18px 0 12px;
+  padding: 10px 12px;
+  background: var(--color-bg-cream);
+  border-radius: var(--radius-sm);
+  line-height: 1.6;
+}
+
+.amenity-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  padding: 10px 18px;
+  background: var(--color-accent);
+  color: #FFF;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  border-radius: 100px;
+  text-align: center;
+  align-self: flex-start;
+  transition: all var(--transition);
+}
+
+.amenity-card-link:hover {
+  background: var(--color-accent-deep);
+  color: #FFF;
+  transform: translateX(2px);
+}
+
+.amenity-card-ryokan .amenity-card-link {
+  background: #4A8DAC;
+}
+
+.amenity-card-ryokan .amenity-card-link:hover {
+  background: #2E6B8A;
+  color: #FFF;
+}
+
+.amenity-tip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(135deg, #FFF 0%, #FDF6E8 100%);
+  border: 1px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.amenity-tip-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.amenity-tip p {
+  font-size: 14px;
+  color: var(--color-text);
+  line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+  .amenity-card {
+    padding: 22px 18px;
+  }
+  .amenity-list {
+    grid-template-columns: 1fr;
+  }
+  .amenity-card-title {
+    font-size: 17px;
+  }
+  .amenity-tip {
+    padding: 16px 18px;
+    flex-direction: column;
+    text-align: center;
+  }
+  .amenity-tip p {
+    font-size: 13px;
+  }
+}
+
 /* ============ Route Map Section ============ */
 .route-section {
   background: linear-gradient(180deg, transparent, rgba(232, 212, 168, 0.15) 50%, transparent);
