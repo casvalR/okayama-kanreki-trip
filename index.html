@@ -717,79 +717,102 @@
         <h3 class="food-block-title">5月23日（土）朝食</h3>
         <span class="food-block-location">@岡山駅周辺</span>
       </div>
+      <p class="food-block-hint">画像・概要をタップでGoogleマップへ。「詳細」で説明と地図を展開。</p>
       <div class="food-cards">
-        <div class="food-card">
-          <div class="food-card-letter">A</div>
-          <div class="food-card-body">
-            <div class="food-card-tagline">豪華に景色を楽しむ</div>
-            <h4 class="food-card-title">ホテル最上階のプレミアムビュッフェ</h4>
-            <div class="food-card-shop">ダイニング&バー アプローズ<br><small>ホテルグランヴィア岡山 19F</small></div>
-            <div class="food-card-rating">
-              <span class="rating-badge google">Google 4.1</span>
-              <span class="rating-badge tabelog">食べログ 3.4</span>
+
+        <article class="food-card">
+          <div class="food-card-summary" data-clickable="true">
+            <div class="food-card-photo" style="background-image: url('https://www.granvia-oka.co.jp/wp/wp-content/themes/granvia-okayama/img/restaurant/applause/img09.jpg');">
+              <span class="food-card-letter">A</span>
             </div>
-            <p class="food-card-desc">ホテル最上階（19階）からの素晴らしいシティービューを眺めながら優雅にいただく朝食。メイン（美星町の卵を使った出来立てオムレツなど）を1品選び、その他はハーフビュッフェ形式で楽しむスタイル。「ままかり」などの岡山郷土料理から、新鮮なフルーツ、焼き立てパンまで驚くほど質が高い。</p>
-            <p class="food-card-rec"><strong>こんな朝に：</strong>朝からホテルの洗練された空間と絶景で、優雅な気分を満喫したい時に。</p>
-            <div class="food-card-map">
-              <iframe
-                src="https://maps.google.com/maps?q=ダイニング%26バー+アプローズ+岡山&hl=ja&z=17&output=embed"
-                width="100%"
-                height="200"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="food-card-info">
+              <div class="food-card-tagline">豪華に景色を楽しむ</div>
+              <h4 class="food-card-title">ホテル最上階のプレミアムビュッフェ</h4>
+              <div class="food-card-shop">ダイニング&バー アプローズ<br><small>ホテルグランヴィア岡山 19F</small></div>
+              <div class="food-card-rating">
+                <span class="rating-badge google">Google 4.1</span>
+                <span class="rating-badge tabelog">食べログ 3.4</span>
+              </div>
+              <p class="food-card-brief">ホテル最上階19階のシティビュー。岡山郷土料理から焼き立てパンまで、ハーフビュッフェ形式で楽しめる優雅な朝食。</p>
             </div>
           </div>
-        </div>
-        <div class="food-card">
-          <div class="food-card-letter">B</div>
-          <div class="food-card-body">
-            <div class="food-card-tagline">静かにレトロを味わう</div>
-            <h4 class="food-card-title">大人気レトロ喫茶のこだわりモーニング</h4>
-            <div class="food-card-shop">喫茶 ほんまち</div>
-            <div class="food-card-rating">
-              <span class="rating-badge google">Google 4.3</span>
-              <span class="rating-badge tabelog">食べログ 3.48</span>
-            </div>
-            <p class="food-card-desc">岡山駅東口からすぐの場所にある、アンティークな調度品に囲まれた隠れ家的な超人気レトロ喫茶。食べログでも3.5に迫る高評価。丁寧に淹れられた深みのあるネルドリップコーヒーと、手作りの絶品サンドイッチ、厚切りトーストなどのモーニングセットが静かな音楽とともに楽しめます。</p>
-            <p class="food-card-rec"><strong>こんな朝に：</strong>「あまり多く食べられない。静かな空間でゆっくり目を覚ましたい」という朝に。</p>
-            <div class="food-card-map">
-              <iframe
-                src="https://maps.google.com/maps?q=喫茶+ほんまち+岡山&hl=ja&z=17&output=embed"
-                width="100%"
-                height="200"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <button type="button" class="food-card-toggle" aria-expanded="false">
+            <span class="food-card-toggle-text">詳細・地図を見る</span>
+            <span class="food-card-toggle-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="food-card-details">
+            <div class="food-card-details-inner">
+              <p class="food-card-desc">ホテル最上階（19階）からの素晴らしいシティービューを眺めながら優雅にいただく朝食。メイン（美星町の卵を使った出来立てオムレツなど）を1品選び、その他はハーフビュッフェ形式で楽しむスタイル。「ままかり」などの岡山郷土料理から、新鮮なフルーツ、焼き立てパンまで驚くほど質が高い。</p>
+              <p class="food-card-rec"><strong>こんな朝に：</strong>朝からホテルの洗練された空間と絶景で、優雅な気分を満喫したい時に。</p>
+              <div class="food-card-map">
+                <iframe src="https://maps.google.com/maps?q=ダイニング%26バー+アプローズ+岡山&hl=ja&z=17&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="food-card">
-          <div class="food-card-letter">C</div>
-          <div class="food-card-body">
-            <div class="food-card-tagline">歴史を感じる大名野点</div>
-            <h4 class="food-card-title">日本三名園で味わう朝のお抹茶</h4>
-            <div class="food-card-shop">お城茶屋<br><small>岡山後楽園内</small></div>
-            <div class="food-card-rating">
-              <span class="rating-badge feature">歴史・ご当地特選</span>
+        </article>
+
+        <article class="food-card">
+          <div class="food-card-summary" data-clickable="true">
+            <div class="food-card-photo food-card-photo-placeholder food-photo-coffee">
+              <span class="food-card-letter">B</span>
+              <span class="food-card-photo-emoji" aria-hidden="true">☕</span>
             </div>
-            <p class="food-card-desc">レンタカーで先回りし、江戸時代に岡山藩主・池田家が築いた広大な回遊式大名庭園「後楽園」へ。朝の清々しい空気と、お城を借景とした美しい池を眺めながら、茶屋で名物の「吉備団子」と「お抹茶」をいただく贅沢な朝のひとときです。</p>
-            <p class="food-card-rec"><strong>こんな朝に：</strong>「朝食は前夜に軽くパン等を買って済ませ、朝一番から歴史の特別な雰囲気に浸りたい」という時に。</p>
-            <div class="food-card-image" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Okayama_Korakuen_Garden01.jpg');"></div>
-            <div class="food-card-map">
-              <iframe
-                src="https://maps.google.com/maps?q=岡山後楽園&hl=ja&z=16&output=embed"
-                width="100%"
-                height="200"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="food-card-info">
+              <div class="food-card-tagline">静かにレトロを味わう</div>
+              <h4 class="food-card-title">大人気レトロ喫茶のこだわりモーニング</h4>
+              <div class="food-card-shop">喫茶 ほんまち</div>
+              <div class="food-card-rating">
+                <span class="rating-badge google">Google 4.3</span>
+                <span class="rating-badge tabelog">食べログ 3.48</span>
+              </div>
+              <p class="food-card-brief">アンティーク調度品に囲まれた隠れ家的レトロ喫茶。深みのあるネルドリップコーヒーと手作りの絶品サンドイッチ。</p>
             </div>
           </div>
-        </div>
+          <button type="button" class="food-card-toggle" aria-expanded="false">
+            <span class="food-card-toggle-text">詳細・地図を見る</span>
+            <span class="food-card-toggle-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="food-card-details">
+            <div class="food-card-details-inner">
+              <p class="food-card-desc">岡山駅東口からすぐの場所にある、アンティークな調度品に囲まれた隠れ家的な超人気レトロ喫茶。食べログでも3.5に迫る高評価。丁寧に淹れられた深みのあるネルドリップコーヒーと、手作りの絶品サンドイッチ、厚切りトーストなどのモーニングセットが静かな音楽とともに楽しめます。</p>
+              <p class="food-card-rec"><strong>こんな朝に：</strong>「あまり多く食べられない。静かな空間でゆっくり目を覚ましたい」という朝に。</p>
+              <div class="food-card-map">
+                <iframe src="https://maps.google.com/maps?q=喫茶+ほんまち+岡山&hl=ja&z=17&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-card-summary" data-clickable="true">
+            <div class="food-card-photo" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Okayama_Korakuen_Garden01.jpg');">
+              <span class="food-card-letter">C</span>
+            </div>
+            <div class="food-card-info">
+              <div class="food-card-tagline">歴史を感じる大名野点</div>
+              <h4 class="food-card-title">日本三名園で味わう朝のお抹茶</h4>
+              <div class="food-card-shop">お城茶屋<br><small>岡山後楽園内</small></div>
+              <div class="food-card-rating">
+                <span class="rating-badge feature">歴史・ご当地特選</span>
+              </div>
+              <p class="food-card-brief">日本三名園・後楽園で、お城を借景に名物の吉備団子と抹茶をいただく贅沢な朝のひととき。</p>
+            </div>
+          </div>
+          <button type="button" class="food-card-toggle" aria-expanded="false">
+            <span class="food-card-toggle-text">詳細・地図を見る</span>
+            <span class="food-card-toggle-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="food-card-details">
+            <div class="food-card-details-inner">
+              <p class="food-card-desc">レンタカーで先回りし、江戸時代に岡山藩主・池田家が築いた広大な回遊式大名庭園「後楽園」へ。朝の清々しい空気と、お城を借景とした美しい池を眺めながら、茶屋で名物の「吉備団子」と「お抹茶」をいただく贅沢な朝のひとときです。</p>
+              <p class="food-card-rec"><strong>こんな朝に：</strong>「朝食は前夜に軽くパン等を買って済ませ、朝一番から歴史の特別な雰囲気に浸りたい」という時に。</p>
+              <div class="food-card-map">
+                <iframe src="https://maps.google.com/maps?q=岡山後楽園&hl=ja&z=16&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
 
@@ -800,78 +823,101 @@
         <h3 class="food-block-title">5月23日（土）昼食</h3>
         <span class="food-block-location">@高梁市（城下町）</span>
       </div>
+      <p class="food-block-hint">画像・概要をタップでGoogleマップへ。「詳細」で説明と地図を展開。</p>
       <div class="food-cards">
-        <div class="food-card">
-          <div class="food-card-letter">A</div>
-          <div class="food-card-body">
-            <div class="food-card-tagline">王道の落ち着いた和食</div>
-            <h4 class="food-card-title">城下町で愛される老舗の丁寧な和定食</h4>
-            <div class="food-card-shop">和食 魚冨（うおとみ）</div>
-            <div class="food-card-rating">
-              <span class="rating-badge google">Google 4.1</span>
-              <span class="rating-badge tabelog">食べログ 3.3</span>
+
+        <article class="food-card">
+          <div class="food-card-summary" data-clickable="true">
+            <div class="food-card-photo" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/211231_Former_Samurai_Residence_of_the_Ashimori_Domain_Okayama_Okayama_pref_Japan02s3.jpg');">
+              <span class="food-card-letter">A</span>
             </div>
-            <p class="food-card-desc">備中松山城の麓にある歴史ある和食処。地元の新鮮な食材を使い、お刺身、天ぷら、小鉢、煮物、そして高梁名産の山芋（特製とろろ御膳）などが美しく並ぶ上品な和食御膳。岡山名物の「鰆（サワラ）のたたき」や「ばら寿司」も味わえます。</p>
-            <p class="food-card-rec"><strong>こんな昼に：</strong>午後の山登りに向けて、胃もたれせず、しっかり栄養を蓄えられる安心の王道ランチを落ち着いた和室で楽しみたい時に。</p>
-            <div class="food-card-map">
-              <iframe
-                src="https://maps.google.com/maps?q=和食+魚冨+高梁&hl=ja&z=16&output=embed"
-                width="100%"
-                height="200"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="food-card-info">
+              <div class="food-card-tagline">王道の落ち着いた和食</div>
+              <h4 class="food-card-title">城下町で愛される老舗の丁寧な和定食</h4>
+              <div class="food-card-shop">和食 魚冨（うおとみ）</div>
+              <div class="food-card-rating">
+                <span class="rating-badge google">Google 4.1</span>
+                <span class="rating-badge tabelog">食べログ 3.3</span>
+              </div>
+              <p class="food-card-brief">備中松山城の麓、高梁名産の山芋を使った特製とろろ御膳。岡山名物の鰆たたきも味わえる老舗和食処。</p>
             </div>
           </div>
-        </div>
-        <div class="food-card">
-          <div class="food-card-letter">B</div>
-          <div class="food-card-body">
-            <div class="food-card-tagline">武家屋敷でツルッと</div>
-            <h4 class="food-card-title">古民家で手打ちを味わう、高梁ランチのトップ評価店</h4>
-            <div class="food-card-shop">手打ちそば 方谷庵（ほうこくあん）</div>
-            <div class="food-card-rating">
-              <span class="rating-badge google">Google 4.1</span>
-              <span class="rating-badge tabelog">食べログ 3.41</span>
-            </div>
-            <p class="food-card-desc">武家屋敷跡の美しい町並みにある、古い邸宅を改修した風情抜群のお蕎麦屋さん。高梁の美味しい水で打たれた蕎麦はコシが強く、喉越しが良いとグルメサイトでも非常に高い評価。サクサクの天ぷら蕎麦や、温かい鴨南蛮などが大人気です。</p>
-            <p class="food-card-rec"><strong>こんな昼に：</strong>「午後の山城登城に備えてあっさり済ませたい。江戸の風情も感じたい」という時に最適。</p>
-            <div class="food-card-map">
-              <iframe
-                src="https://maps.google.com/maps?q=方谷庵+高梁&hl=ja&z=16&output=embed"
-                width="100%"
-                height="200"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <button type="button" class="food-card-toggle" aria-expanded="false">
+            <span class="food-card-toggle-text">詳細・地図を見る</span>
+            <span class="food-card-toggle-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="food-card-details">
+            <div class="food-card-details-inner">
+              <p class="food-card-desc">備中松山城の麓にある歴史ある和食処。地元の新鮮な食材を使い、お刺身、天ぷら、小鉢、煮物、そして高梁名産の山芋（特製とろろ御膳）などが美しく並ぶ上品な和食御膳。岡山名物の「鰆（サワラ）のたたき」や「ばら寿司」も味わえます。</p>
+              <p class="food-card-rec"><strong>こんな昼に：</strong>午後の山登りに向けて、胃もたれせず、しっかり栄養を蓄えられる安心の王道ランチを落ち着いた和室で楽しみたい時に。</p>
+              <div class="food-card-map">
+                <iframe src="https://maps.google.com/maps?q=和食+魚冨+高梁&hl=ja&z=16&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="food-card">
-          <div class="food-card-letter">C</div>
-          <div class="food-card-body">
-            <div class="food-card-tagline">建物自体が歴史的資料</div>
-            <h4 class="food-card-title">築100年超の旧醤油屋で過ごすレトロ時間</h4>
-            <div class="food-card-shop">町家カフェ 太郎と花子</div>
-            <div class="food-card-rating">
-              <span class="rating-badge feature">歴史・町並み特選</span>
+        </article>
+
+        <article class="food-card">
+          <div class="food-card-summary" data-clickable="true">
+            <div class="food-card-photo" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Mori_soba_of_Fuji-soba.jpg');">
+              <span class="food-card-letter">B</span>
             </div>
-            <p class="food-card-desc">本町町並み保存地区（かつての商人町）にあり、明治期に建てられた本物の商家（旧醤油屋）をそのまま活かしたレトロなカフェレストラン。太い梁、むき出しの土間、奥へ続く細長い「うなぎの寝床」の造りなど、当時の大商人の暮らしがそのまま遺されています。食事は地元の旬の野菜を使ったカレーやハンバーグなどがいただけます。</p>
-            <p class="food-card-rec"><strong>こんな昼に：</strong>「歴史ある建物の空間そのものに浸りたい。商人の歴史にも興味がある」という時に。</p>
-            <div class="food-card-map">
-              <iframe
-                src="https://maps.google.com/maps?q=町家カフェ+太郎と花子+高梁&hl=ja&z=16&output=embed"
-                width="100%"
-                height="200"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="food-card-info">
+              <div class="food-card-tagline">武家屋敷でツルッと</div>
+              <h4 class="food-card-title">古民家で手打ちを味わう、高梁ランチのトップ評価店</h4>
+              <div class="food-card-shop">手打ちそば 方谷庵（ほうこくあん）</div>
+              <div class="food-card-rating">
+                <span class="rating-badge google">Google 4.1</span>
+                <span class="rating-badge tabelog">食べログ 3.41</span>
+              </div>
+              <p class="food-card-brief">武家屋敷町の古民家で味わう、コシ強い手打ち蕎麦。サクサクの天ぷら蕎麦や温かい鴨南蛮が大人気。</p>
             </div>
           </div>
-        </div>
+          <button type="button" class="food-card-toggle" aria-expanded="false">
+            <span class="food-card-toggle-text">詳細・地図を見る</span>
+            <span class="food-card-toggle-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="food-card-details">
+            <div class="food-card-details-inner">
+              <p class="food-card-desc">武家屋敷跡の美しい町並みにある、古い邸宅を改修した風情抜群のお蕎麦屋さん。高梁の美味しい水で打たれた蕎麦はコシが強く、喉越しが良いとグルメサイトでも非常に高い評価。サクサクの天ぷら蕎麦や、温かい鴨南蛮などが大人気です。</p>
+              <p class="food-card-rec"><strong>こんな昼に：</strong>「午後の山城登城に備えてあっさり済ませたい。江戸の風情も感じたい」という時に最適。</p>
+              <div class="food-card-map">
+                <iframe src="https://maps.google.com/maps?q=方谷庵+高梁&hl=ja&z=16&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-card-summary" data-clickable="true">
+            <div class="food-card-photo" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Hanamizuki_street_in_Takahashi_city,_Okayama_Apr_16,_2018.jpg');">
+              <span class="food-card-letter">C</span>
+            </div>
+            <div class="food-card-info">
+              <div class="food-card-tagline">建物自体が歴史的資料</div>
+              <h4 class="food-card-title">築100年超の旧醤油屋で過ごすレトロ時間</h4>
+              <div class="food-card-shop">町家カフェ 太郎と花子</div>
+              <div class="food-card-rating">
+                <span class="rating-badge feature">歴史・町並み特選</span>
+              </div>
+              <p class="food-card-brief">明治期の旧醤油屋をそのまま活かしたレトロ空間。旬野菜のカレーやハンバーグを「うなぎの寝床」造りで。</p>
+            </div>
+          </div>
+          <button type="button" class="food-card-toggle" aria-expanded="false">
+            <span class="food-card-toggle-text">詳細・地図を見る</span>
+            <span class="food-card-toggle-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="food-card-details">
+            <div class="food-card-details-inner">
+              <p class="food-card-desc">本町町並み保存地区（かつての商人町）にあり、明治期に建てられた本物の商家（旧醤油屋）をそのまま活かしたレトロなカフェレストラン。太い梁、むき出しの土間、奥へ続く細長い「うなぎの寝床」の造りなど、当時の大商人の暮らしがそのまま遺されています。食事は地元の旬の野菜を使ったカレーやハンバーグなどがいただけます。</p>
+              <p class="food-card-rec"><strong>こんな昼に：</strong>「歴史ある建物の空間そのものに浸りたい。商人の歴史にも興味がある」という時に。</p>
+              <div class="food-card-map">
+                <iframe src="https://maps.google.com/maps?q=町家カフェ+太郎と花子+高梁&hl=ja&z=16&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
 
@@ -882,78 +928,102 @@
         <h3 class="food-block-title">5月24日（日）昼食</h3>
         <span class="food-block-location">@津山市</span>
       </div>
+      <p class="food-block-hint">画像・概要をタップでGoogleマップへ。「詳細」で説明と地図を展開。</p>
       <div class="food-cards">
-        <div class="food-card food-card-top">
-          <div class="food-card-letter">A</div>
-          <div class="food-card-body">
-            <div class="food-card-tagline">津山肉文化の最高峰</div>
-            <h4 class="food-card-title">食べログ3.6超！目の前で焼く圧倒的な肉名店</h4>
-            <div class="food-card-shop">鉄板焼き 千恵（ちえ）<br><small>👑 おすすめNo.1</small></div>
-            <div class="food-card-rating">
-              <span class="rating-badge google">Google 4.3</span>
-              <span class="rating-badge tabelog">食べログ 3.64</span>
+
+        <article class="food-card food-card-top">
+          <div class="food-card-summary" data-clickable="true">
+            <div class="food-card-photo" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/KobeBeefOnGrill.jpg');">
+              <span class="food-card-letter">A</span>
             </div>
-            <p class="food-card-desc">津山を代表する超名店であり、食べログでも圧倒的高評価を誇る肉の聖地。目の前の鉄板で、職人が最高の焼き加減で黒毛和牛（サガリや新鮮なミノ、ロース）をタレとともに焼き上げてくれます。津山名物の「そずり（骨の周りの削ぎ落とし肉）」の炒め物や、極上の肉料理に言葉を失います。</p>
-            <p class="food-card-rec"><strong>こんな昼に：</strong>「最高に美味いご当地のお肉を贅沢に味わいたい！」という時に（※超人気店のため事前予約必須）。</p>
-            <div class="food-card-map">
-              <iframe
-                src="https://maps.google.com/maps?q=鉄板焼+千恵+津山&hl=ja&z=16&output=embed"
-                width="100%"
-                height="200"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="food-card-info">
+              <div class="food-card-tagline">津山肉文化の最高峰</div>
+              <h4 class="food-card-title">食べログ3.6超！目の前で焼く圧倒的な肉名店</h4>
+              <div class="food-card-shop">鉄板焼き 千恵（ちえ）<br><small>👑 おすすめNo.1</small></div>
+              <div class="food-card-rating">
+                <span class="rating-badge google">Google 4.3</span>
+                <span class="rating-badge tabelog">食べログ 3.64</span>
+              </div>
+              <p class="food-card-brief">目の前で焼き上げる黒毛和牛の名店。津山名物そずりも絶品。食べログ3.6超の超人気店。</p>
             </div>
           </div>
-        </div>
-        <div class="food-card">
-          <div class="food-card-letter">B</div>
-          <div class="food-card-body">
-            <div class="food-card-tagline">伝説のローカルフード</div>
-            <h4 class="food-card-title">創業130年、津山ホルモンうどんの聖地</h4>
-            <div class="food-card-shop">橋野食堂（はしのしょくどう）</div>
-            <div class="food-card-rating">
-              <span class="rating-badge google">Google 4.1</span>
-              <span class="rating-badge tabelog">食べログ 3.49</span>
-            </div>
-            <p class="food-card-desc">明治時代から続く、津山B級グルメ「ホルモンうどん」の伝説的な老舗有名店。全国からここの味を求めて人が集まります。新鮮で臭みが一切なく、ぷりぷりの大きな牛ホルモンを、秘伝のピリ辛味噌ダレと特製うどんで一気に焼き上げる、五感を刺激する香ばしさが堪りません。</p>
-            <p class="food-card-rec"><strong>こんな昼に：</strong>「地元の人に混じって、津山にしかない唯一無二のローカルフードをガツンと食べたい！」という時に。</p>
-            <div class="food-card-map">
-              <iframe
-                src="https://maps.google.com/maps?q=橋野食堂+津山&hl=ja&z=16&output=embed"
-                width="100%"
-                height="200"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <button type="button" class="food-card-toggle" aria-expanded="false">
+            <span class="food-card-toggle-text">詳細・地図を見る</span>
+            <span class="food-card-toggle-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="food-card-details">
+            <div class="food-card-details-inner">
+              <p class="food-card-desc">津山を代表する超名店であり、食べログでも圧倒的高評価を誇る肉の聖地。目の前の鉄板で、職人が最高の焼き加減で黒毛和牛（サガリや新鮮なミノ、ロース）をタレとともに焼き上げてくれます。津山名物の「そずり（骨の周りの削ぎ落とし肉）」の炒め物や、極上の肉料理に言葉を失います。</p>
+              <p class="food-card-rec"><strong>こんな昼に：</strong>「最高に美味いご当地のお肉を贅沢に味わいたい！」という時に（※超人気店のため事前予約必須）。</p>
+              <div class="food-card-map">
+                <iframe src="https://maps.google.com/maps?q=鉄板焼+千恵+津山&hl=ja&z=16&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="food-card">
-          <div class="food-card-letter">C</div>
-          <div class="food-card-body">
-            <div class="food-card-tagline">歴史に思いを馳せる大正浪漫</div>
-            <h4 class="food-card-title">藩主別邸跡地でいただく優雅な肉洋食</h4>
-            <div class="food-card-shop">リストランテ津山<br><small>ザ・シロヤマテラス津山別邸内</small></div>
-            <div class="food-card-rating">
-              <span class="rating-badge feature">歴史・ご当地特選</span>
+        </article>
+
+        <article class="food-card">
+          <div class="food-card-summary" data-clickable="true">
+            <div class="food-card-photo food-card-photo-placeholder food-photo-noodle">
+              <span class="food-card-letter">B</span>
+              <span class="food-card-photo-emoji" aria-hidden="true">🍜</span>
             </div>
-            <p class="food-card-desc">津山城のすぐ麓、かつての「津山藩主・松平家の別邸（御対面所）跡地」に建つハイクラスホテルの洗練されたメインダイニング。江戸時代、全国で唯一「養生喰い（薬としての肉食）」が特別に許されていた津山の深い牛肉の歴史背景を感じながら、ブランド和牛である「千屋牛」や「作州牛」のステーキ、または上品な肉洋食をいただけます。</p>
-            <p class="food-card-rec"><strong>こんな昼に：</strong>「お城の麓の美しい景色と歴史的価値のある場所で、落ち着いて優雅にステーキランチを楽しみたい」という時に。</p>
-            <div class="food-card-map">
-              <iframe
-                src="https://maps.google.com/maps?q=ザ・シロヤマテラス津山別邸&hl=ja&z=16&output=embed"
-                width="100%"
-                height="200"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="food-card-info">
+              <div class="food-card-tagline">伝説のローカルフード</div>
+              <h4 class="food-card-title">創業130年、津山ホルモンうどんの聖地</h4>
+              <div class="food-card-shop">橋野食堂（はしのしょくどう）</div>
+              <div class="food-card-rating">
+                <span class="rating-badge google">Google 4.1</span>
+                <span class="rating-badge tabelog">食べログ 3.49</span>
+              </div>
+              <p class="food-card-brief">明治創業130年、津山B級グルメ「ホルモンうどん」の聖地。ぷりぷり牛ホルモンとピリ辛味噌ダレ。</p>
             </div>
           </div>
-        </div>
+          <button type="button" class="food-card-toggle" aria-expanded="false">
+            <span class="food-card-toggle-text">詳細・地図を見る</span>
+            <span class="food-card-toggle-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="food-card-details">
+            <div class="food-card-details-inner">
+              <p class="food-card-desc">明治時代から続く、津山B級グルメ「ホルモンうどん」の伝説的な老舗有名店。全国からここの味を求めて人が集まります。新鮮で臭みが一切なく、ぷりぷりの大きな牛ホルモンを、秘伝のピリ辛味噌ダレと特製うどんで一気に焼き上げる、五感を刺激する香ばしさが堪りません。</p>
+              <p class="food-card-rec"><strong>こんな昼に：</strong>「地元の人に混じって、津山にしかない唯一無二のローカルフードをガツンと食べたい！」という時に。</p>
+              <div class="food-card-map">
+                <iframe src="https://maps.google.com/maps?q=橋野食堂+津山&hl=ja&z=16&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="food-card">
+          <div class="food-card-summary" data-clickable="true">
+            <div class="food-card-photo" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Tsuyama_Castle_Bitchuu-yagura.jpg');">
+              <span class="food-card-letter">C</span>
+            </div>
+            <div class="food-card-info">
+              <div class="food-card-tagline">歴史に思いを馳せる大正浪漫</div>
+              <h4 class="food-card-title">藩主別邸跡地でいただく優雅な肉洋食</h4>
+              <div class="food-card-shop">リストランテ津山<br><small>ザ・シロヤマテラス津山別邸内</small></div>
+              <div class="food-card-rating">
+                <span class="rating-badge feature">歴史・ご当地特選</span>
+              </div>
+              <p class="food-card-brief">松平家別邸跡のホテル内、千屋牛・作州牛の優雅なステーキランチ。お城の景色と歴史を感じながら。</p>
+            </div>
+          </div>
+          <button type="button" class="food-card-toggle" aria-expanded="false">
+            <span class="food-card-toggle-text">詳細・地図を見る</span>
+            <span class="food-card-toggle-icon" aria-hidden="true">▼</span>
+          </button>
+          <div class="food-card-details">
+            <div class="food-card-details-inner">
+              <p class="food-card-desc">津山城のすぐ麓、かつての「津山藩主・松平家の別邸（御対面所）跡地」に建つハイクラスホテルの洗練されたメインダイニング。江戸時代、全国で唯一「養生喰い（薬としての肉食）」が特別に許されていた津山の深い牛肉の歴史背景を感じながら、ブランド和牛である「千屋牛」や「作州牛」のステーキ、または上品な肉洋食をいただけます。</p>
+              <p class="food-card-rec"><strong>こんな昼に：</strong>「お城の麓の美しい景色と歴史的価値のある場所で、落ち着いて優雅にステーキランチを楽しみたい」という時に。</p>
+              <div class="food-card-map">
+                <iframe src="https://maps.google.com/maps?q=ザ・シロヤマテラス津山別邸&hl=ja&z=16&output=embed" width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+            </div>
+          </div>
+        </article>
+
       </div>
     </div>
   </div>

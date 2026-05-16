@@ -82,3 +82,67 @@ document.querySelectorAll('.section-header, .booking-card, .timeline-item, .food
   el.classList.add('fade-in');
   observer.observe(el);
 });
+
+// Make food card summaries clickable -> open Google Maps for the shop
+document.querySelectorAll('.food-card').forEach(card => {
+  const summary = card.querySelector('.food-card-summary');
+  const shopEl = card.querySelector('.food-card-shop');
+  if (!summary || !shopEl) return;
+
+  let mainName = '';
+  for (const node of shopEl.childNodes) {
+    if (node.nodeName === 'BR' || node.nodeName === 'SMALL') break;
+    if (node.nodeType === Node.TEXT_NODE) mainName += node.textContent;
+  }
+  mainName = mainName.trim();
+  if (!mainName) return;
+
+  const smallEl = shopEl.querySelector('small');
+  let subInfo = '';
+  if (smallEl) {
+    const raw = smallEl.textContent.trim();
+    if (!/おすすめ|👑/.test(raw)) subInfo = raw;
+  }
+
+  const blockLoc = card.closest('.food-block')?.querySelector('.food-block-location');
+  let location = '';
+  if (blockLoc) {
+    location = blockLoc.textContent
+      .replace(/^@\s*/, '')
+      .replace(/[（）()]/g, ' ')
+      .replace(/城下町|周辺/g, '')
+      .trim();
+  }
+
+  const query = [mainName, subInfo, location].filter(Boolean).join(' ');
+  const url = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+
+  summary.setAttribute('role', 'link');
+  summary.setAttribute('tabindex', '0');
+  summary.setAttribute('aria-label', `${mainName}をGoogleマップで開く`);
+
+  summary.addEventListener('click', () => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  });
+
+  summary.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  });
+});
+
+// Toggle food card details
+document.querySelectorAll('.food-card-toggle').forEach(btn => {
+  const textEl = btn.querySelector('.food-card-toggle-text');
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const card = btn.closest('.food-card');
+    if (!card) return;
+    const expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    card.classList.toggle('is-expanded');
+    if (textEl) textEl.textContent = expanded ? '詳細・地図を見る' : '閉じる';
+  });
+});
