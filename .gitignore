@@ -10,3 +10,6 @@ node_modules/
 *credentials*.json
 *service_account*.json
 *secret*.json
+
+# Local test/preview files
+test-*.html
