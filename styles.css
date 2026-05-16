@@ -807,7 +807,7 @@ a:hover {
 
 .amenity-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
   gap: 24px;
   margin-bottom: 32px;
 }
@@ -998,14 +998,30 @@ a:hover {
 }
 
 @media (max-width: 600px) {
+  .amenity-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
   .amenity-card {
     padding: 22px 18px;
+    min-width: 0;
   }
   .amenity-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px 8px;
+  }
+  .amenity-list li {
+    font-size: 12.5px;
+    padding-left: 14px;
   }
   .amenity-card-title {
     font-size: 17px;
+  }
+  .amenity-card-head {
+    gap: 12px;
+  }
+  .amenity-card-icon {
+    font-size: 30px;
   }
   .amenity-tip {
     padding: 16px 18px;
@@ -1014,6 +1030,12 @@ a:hover {
   }
   .amenity-tip p {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .amenity-list {
+    grid-template-columns: 1fr;
   }
 }
 
