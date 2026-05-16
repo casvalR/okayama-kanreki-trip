@@ -1330,6 +1330,7 @@ a:hover {
   color: var(--color-ink);
   line-height: 1.5;
   margin-bottom: 12px;
+  min-height: calc(17px * 1.5 * 2); /* reserve 2 lines for alignment */
 }
 
 .food-card-shop {
@@ -1341,6 +1342,7 @@ a:hover {
   padding-bottom: 10px;
   border-bottom: 1px dashed var(--color-line);
   line-height: 1.5;
+  min-height: calc(14.5px * 1.5 + 11.5px * 1.4 + 2px); /* fit name + optional small */
 }
 
 .food-card-shop small {
@@ -1536,12 +1538,14 @@ a:hover {
     font-size: 14.5px;
     line-height: 1.45;
     margin-bottom: 8px;
+    min-height: 0;
   }
 
   .food-card-shop {
     font-size: 13px;
     margin-bottom: 8px;
     padding-bottom: 8px;
+    min-height: 0;
   }
 
   .food-card-shop small {
