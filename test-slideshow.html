@@ -22,405 +22,47 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;900&family=Shippori+Mincho:wght@500;600;700;800&family=Klee+One:wght@400;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-.hero-slideshow-v3 { background:#0e0805; }
-.hero-cinema{position:absolute;inset:0;z-index:0;overflow:hidden;}
-.hero-slides{position:absolute;inset:0;}
-.hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transition:opacity 2s cubic-bezier(.4,0,.2,1);filter:saturate(1.08) contrast(1.04);}
-.hero-slide.is-active{opacity:1;}
-.hero-letterbox{position:absolute;left:0;right:0;background:linear-gradient(180deg, rgba(14,8,5,.95) 0%, rgba(14,8,5,.7) 80%, transparent 100%);height:80px;z-index:2;}
-.hero-letterbox-top{top:0;}
-.hero-letterbox-bottom{bottom:0;background:linear-gradient(0deg, rgba(14,8,5,.95) 0%, rgba(14,8,5,.7) 80%, transparent 100%);height:96px;display:flex;align-items:flex-end;padding:0 5%;}
-.hero-cinema-bar{width:100%;max-width:1100px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding-bottom:24px;color:rgba(245,239,230,.95);font-family:var(--font-serif);gap:24px;flex-wrap:wrap;}
-.hero-cinema-meta{display:flex;align-items:center;gap:14px;font-size:13px;letter-spacing:.18em;animation:cinemaIn .8s ease both;}
-.hero-cinema-day{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:16px;letter-spacing:.3em;color:#E8C275;}
-.hero-cinema-divider{opacity:.4;}
-.hero-cinema-place{font-weight:500;}
-.hero-cinema-progress{display:flex;align-items:center;gap:12px;font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:.2em;color:rgba(232,194,117,.9);}
-.hero-cinema-bar-line{width:120px;height:1px;background:rgba(232,194,117,.25);overflow:hidden;}
-.hero-cinema-bar-fill{height:100%;background:#E8C275;width:0;transition:width .15s linear;}
-@keyframes cinemaIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
-.hero-overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 75% 65% at 50% 48%, rgba(251,247,241,0.9) 0%, rgba(251,247,241,0.72) 50%, rgba(251,247,241,0.5) 100%), linear-gradient(180deg, rgba(251,247,241,0.55) 0%, transparent 35%, transparent 65%, rgba(251,247,241,0.6) 100%);}
-.hero-slideshow-v3 .hero-title{text-shadow:0 2px 16px rgba(255,255,255,0.7), 0 1px 2px rgba(255,255,255,0.5);}
-.hero-slideshow-v3 .hero-tag-text,.hero-slideshow-v3 .hero-meta-label,.hero-slideshow-v3 .hero-meta-value,.hero-slideshow-v3 .hero-meta-sub{text-shadow:0 1px 4px rgba(255,255,255,0.5);}
-.hero-slideshow-v3 .hero-pattern{z-index:2;opacity:.3;}
-.hero-slideshow-v3 .hero-content{position:relative;z-index:3;padding-top:60px;padding-bottom:90px;}
-.hero-slideshow-v3 .hero-scroll{display:none;}
-.hero-slideshow-v3 .hero-meta-item{background:rgba(255,255,255,.85);}
-.hero-slideshow-v3 .hero-tag{background:rgba(255,255,255,.92);}
-.hero-slideshow-v3 {
-  min-height: 100svh;
-  min-height: 100dvh;
-  height: 100svh;
-  height: 100dvh;
-  padding: 0 !important;
+/* Slideshow Hero */
+.hero-slideshow { background: #2A1F1A; }
+.hero-slides {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   overflow: hidden;
 }
-.hero-slideshow-v3 .hero-content { width: 100%; max-width: 900px; }
-@media (max-width: 760px){
-  .hero-letterbox{height:36px;}
-  .hero-letterbox-top{background:linear-gradient(180deg, rgba(14,8,5,.9) 0%, rgba(14,8,5,.5) 70%, transparent 100%);}
-  .hero-letterbox-bottom{height:74px;padding:0 14px;background:linear-gradient(0deg, rgba(14,8,5,.95) 0%, rgba(14,8,5,.6) 75%, transparent 100%);}
-  .hero-cinema-bar{flex-direction:column;align-items:flex-start;gap:4px;padding-bottom:10px;max-width:none;}
-  .hero-cinema-meta{font-size:10px;gap:6px;letter-spacing:.1em;flex-wrap:wrap;}
-  .hero-cinema-day{font-size:11px;letter-spacing:.22em;}
-  .hero-cinema-progress{font-size:9.5px;letter-spacing:.15em;gap:8px;width:100%;justify-content:flex-start;}
-  .hero-cinema-bar-line{width:100%;max-width:200px;flex:1;}
-  .hero-slideshow-v3 .hero-content{
-    padding: 48px 18px 84px !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 100%;
-  }
-  .hero-slideshow-v3 .hero-tag{margin-bottom:12px;padding:4px 14px;}
-  .hero-slideshow-v3 .hero-tag-mark{width:22px;height:22px;font-size:12px;}
-  .hero-slideshow-v3 .hero-tag-text{font-size:10.5px;letter-spacing:.22em;}
-  .hero-slideshow-v3 .hero-title{
-    font-size: clamp(20px, 5.8vw, 28px);
-    line-height: 1.35;
-    margin-bottom: 14px;
-    letter-spacing: 0.04em;
-  }
-  .hero-slideshow-v3 .hero-divider{ margin-bottom: 14px; }
-  .hero-slideshow-v3 .hero-divider-line{width:36px;}
-  .hero-slideshow-v3 .hero-meta{
-    gap: 6px;
-    margin-bottom: 14px;
-    flex-direction: column;
-    width: 100%;
-    max-width: 380px;
-  }
-  .hero-slideshow-v3 .hero-meta-item{
-    padding: 8px 14px;
-    min-width: 0;
-    width: 100%;
-    flex: 0 0 auto;
-  }
-  .hero-slideshow-v3 .hero-meta-label{font-size:9.5px;margin-bottom:2px;}
-  .hero-slideshow-v3 .hero-meta-value{font-size:13px;}
-  .hero-slideshow-v3 .hero-meta-sub{font-size:10.5px;}
-  .hero-slideshow-v3 .hero-countdown{
-    padding: 12px 24px;
-  }
-  .hero-slideshow-v3 .countdown-label{
-    font-size: 10px;
-    margin-bottom: 6px;
-    letter-spacing: 0.2em;
-  }
-  .hero-slideshow-v3 .countdown-numbers{gap:10px;}
-  .hero-slideshow-v3 .countdown-value{
-    font-size: clamp(24px, 6.5vw, 32px);
-  }
-  .hero-slideshow-v3 .countdown-unit{font-size:10px;}
-  .hero-slideshow-v3 .countdown-item{gap:3px;}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2.5s ease-in-out;
+  will-change: opacity, transform;
 }
-@media (max-height: 700px) and (max-width: 760px){
-  /* Even tighter for short screens (iPhone SE etc.) */
-  .hero-slideshow-v3 .hero-content{padding: 42px 18px 78px !important;}
-  .hero-slideshow-v3 .hero-meta{
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: none;
-  }
-  .hero-slideshow-v3 .hero-meta-item{flex: 1 1 100%;padding:6px 12px;}
-  .hero-slideshow-v3 .hero-meta-value{font-size:12px;}
-  .hero-slideshow-v3 .hero-title{font-size: clamp(18px, 5.2vw, 24px);margin-bottom:10px;}
-  .hero-slideshow-v3 .hero-divider{display:none;}
-  .hero-slideshow-v3 .hero-countdown{padding: 10px 20px;}
-  .hero-slideshow-v3 .countdown-value{font-size:22px;}
+.hero-slide.is-active {
+  opacity: 1;
+  animation: kenBurns 9s ease-out forwards;
 }
-@media (max-width: 420px){
-  .hero-cinema-place{display:block;font-size:10px;}
-  .hero-cinema-divider{display:none;}
+@keyframes kenBurns {
+  0% { transform: scale(1.08) translate(-1%, 1%); }
+  100% { transform: scale(1.18) translate(2%, -2%); }
 }
-
-/* ==== Opening Animation ==== */
-.opening{position:fixed;inset:0;z-index:9999;background:#0E0805;display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;}
-.opening.is-leaving{transition:opacity 1s ease;opacity:0;pointer-events:none;}
-.opening.is-removed{display:none;}
-.opening-letterbox{position:absolute;left:0;right:0;height:50%;background:#0E0805;z-index:2;}
-.opening-letterbox-top{top:0;animation:lbTop 1.2s cubic-bezier(.7,0,.3,1) 2.6s forwards;}
-.opening-letterbox-bottom{bottom:0;animation:lbBottom 1.2s cubic-bezier(.7,0,.3,1) 2.6s forwards;}
-@keyframes lbTop{to{transform:translateY(-100%);}}
-@keyframes lbBottom{to{transform:translateY(100%);}}
-.opening-content{position:relative;z-index:3;text-align:center;color:#F5EFE6;}
-.opening-mark-wrap{display:flex;align-items:center;justify-content:center;gap:24px;}
-.opening-mark-line{height:1px;background:linear-gradient(90deg, transparent, #E8C275 50%, transparent);width:0;display:block;}
-.opening-mark-line-l{animation:lineDrawL 1.3s cubic-bezier(.7,0,.3,1) .3s forwards;}
-.opening-mark-line-r{animation:lineDrawR 1.3s cubic-bezier(.7,0,.3,1) .3s forwards;}
-@keyframes lineDrawL{to{width:90px;}}
-@keyframes lineDrawR{to{width:90px;}}
-.opening-symbol{font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:clamp(72px,14vw,128px);color:#E8C275;line-height:1;opacity:0;transform:scale(.85);animation:symbolIn 1.4s cubic-bezier(.4,0,.2,1) .4s forwards;text-shadow:0 0 40px rgba(232,194,117,.4);font-weight:700;}
-@keyframes symbolIn{to{opacity:1;transform:scale(1);}}
-.opening-label{font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:clamp(22px,3.6vw,32px);letter-spacing:.45em;margin-top:30px;padding-left:.45em;opacity:0;transform:translateY(12px);animation:fadeUp 1s ease 1.1s forwards;}
-.opening-sub{font-family:'Cormorant Garamond',serif;font-size:clamp(10px,1.5vw,13px);letter-spacing:.5em;color:rgba(232,194,117,.7);margin-top:18px;padding-left:.5em;opacity:0;transform:translateY(8px);animation:fadeUp 1s ease 1.5s forwards;}
-@keyframes fadeUp{to{opacity:1;transform:translateY(0);}}
-.opening-skip{position:absolute;bottom:32px;right:32px;font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:.3em;color:rgba(245,239,230,.4);z-index:4;opacity:0;animation:fadeUp .6s ease 2s forwards;}
-.opening.is-leaving .opening-content{opacity:0;transition:opacity .5s ease;}
-body.opening-active{overflow:hidden;}
-@media (max-width: 600px){
-  .opening-mark-wrap{gap:16px;}
-  .opening-mark-line-l,.opening-mark-line-r{animation-name:lineDrawSm;}
-  @keyframes lineDrawSm{to{width:50px;}}
-  .opening-label{margin-top:22px;letter-spacing:.35em;}
-  .opening-sub{margin-top:14px;letter-spacing:.4em;}
-  .opening-skip{bottom:20px;right:20px;font-size:10px;}
-}
-
-/* ========================================
-   V3.1: Dark Cinematic Theme
-   ベース: 漆黒、アクセント: 金、ハイライト: 朱赤
-======================================== */
-:root {
-  --color-bg: #0E0805;
-  --color-bg-cream: #18100A;
-  --color-bg-paper: #1F1611;
-  --color-text: #F5EFE6;
-  --color-text-soft: #C9B89E;
-  --color-text-muted: #8C7A66;
-  --color-accent: #E8C275;
-  --color-accent-deep: #C8A464;
-  --color-accent-light: #F0D88C;
-  --color-gold: #E8C275;
-  --color-gold-deep: #C8A464;
-  --color-gold-light: #F0D88C;
-  --color-ink: #F5EFE6;
-  --color-line: #3D2E25;
-  --color-line-soft: #28201A;
-  --color-shadow: rgba(0,0,0,0.4);
-  --color-shadow-deep: rgba(0,0,0,0.7);
-}
-body { background: #0E0805; color: #F5EFE6; }
-.seigaiha-bg {
-  background-color: #0E0805;
-  background-image: radial-gradient(circle at 1px 1px, rgba(232,194,117,0.06) 1px, transparent 0);
-}
-
-/* Navigation */
-.nav { background: rgba(14,8,5,0.92); border-bottom: 1px solid rgba(232,194,117,0.15); }
-.nav-logo { color: #F5EFE6; }
-.nav-list a { color: #C9B89E; }
-.nav-list a:hover { background: #E8C275; color: #0E0805; }
-.nav-toggle span { background: #F5EFE6; }
-@media (max-width: 900px) {
-  .nav-list { background: rgba(14,8,5,0.98); border-bottom: 1px solid rgba(232,194,117,0.15); }
-}
-
-/* Hero overlay: dark cinematic */
 .hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   background:
-    radial-gradient(ellipse 80% 70% at 50% 48%, rgba(14,8,5,0.55) 0%, rgba(14,8,5,0.4) 50%, rgba(14,8,5,0.25) 100%),
-    linear-gradient(180deg, rgba(14,8,5,0.65) 0%, rgba(14,8,5,0.3) 35%, rgba(14,8,5,0.4) 65%, rgba(14,8,5,0.85) 100%) !important;
+    linear-gradient(180deg, rgba(251, 247, 241, 0.7) 0%, rgba(251, 247, 241, 0.5) 35%, rgba(251, 247, 241, 0.4) 65%, rgba(251, 247, 241, 0.85) 100%),
+    radial-gradient(ellipse at center, rgba(255,255,255,0.2) 0%, transparent 70%);
 }
-.hero-slideshow-v3 .hero-title { text-shadow: 0 4px 24px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.6) !important; color: #F5EFE6 !important; }
-.hero-slideshow-v3 .hero-meta-item { background: rgba(20,13,8,0.78) !important; border-color: rgba(232,194,117,0.2); backdrop-filter: blur(8px); }
-.hero-slideshow-v3 .hero-tag { background: rgba(20,13,8,0.85) !important; border-color: rgba(232,194,117,0.3); }
-.hero-slideshow-v3 .hero-tag-text,
-.hero-slideshow-v3 .hero-meta-label,
-.hero-slideshow-v3 .hero-meta-value,
-.hero-slideshow-v3 .hero-meta-sub { text-shadow: 0 1px 3px rgba(0,0,0,0.5) !important; }
-.hero-tag-text { color: #E8C275; }
-.hero-title-sub { color: #E8C275; }
-.hero-meta-label { color: #E8C275; }
-.hero-meta-value { color: #F5EFE6; }
-.hero-meta-sub { color: #A89878; }
-.hero-countdown { background: linear-gradient(135deg, #A02828 0%, #6E1A1A 100%); color: #F5EFE6; box-shadow: 0 10px 40px rgba(160,40,40,0.4); }
-
-/* Cinema bar */
-.hero-cinema-bar { color: rgba(245,239,230,0.95); }
-.hero-cinema-day { color: #E8C275; }
-
-/* Section common */
-.section-number { color: #E8C275; }
-.section-number::after { background: #E8C275; }
-.section-title { color: #F5EFE6; }
-.section-subtitle { color: #C9B89E; }
-
-/* Highlights */
-.highlights-section { background: linear-gradient(180deg, transparent, rgba(232,194,117,0.04)); }
-.highlight-card { background: #1F1611; border-color: #3D2E25; color: inherit; }
-.highlight-body h3 { color: #F5EFE6; }
-.highlight-body p { color: #C9B89E; }
-.highlight-tag { background: #E8C275; color: #0E0805; }
-.highlight-link-icon { color: #E8C275; }
-.highlight-link-label { color: #E8C275; border-color: #E8C275; }
-.highlight-card:hover .highlight-link-label { background: #E8C275; color: #0E0805; }
-
-/* Bookings */
-.bookings { background: linear-gradient(180deg, #18100A 0%, transparent 100%); }
-.booking-card { background: #1F1611; border-color: #3D2E25; }
-.booking-card-highlight { background: linear-gradient(135deg, #1F1611 0%, #2A1F18 100%); }
-.booking-card-title { color: #F5EFE6; }
-.booking-card-label { color: #8C7A66; }
-.booking-card-body { color: #C9B89E; }
-.booking-card-head { border-bottom-color: #3D2E25; }
-.booking-route { background: rgba(14,8,5,0.55); }
-.route-time { color: #E8C275; }
-.route-name { color: #F5EFE6; }
-.route-line { background: #3D2E25; }
-.booking-status { background: rgba(232,194,117,0.15); color: #E8C275; }
-.booking-card::before { background: linear-gradient(180deg, #E8C275, #A02828); }
-.booking-card-highlight::before { background: linear-gradient(180deg, #A02828, #6E1A1A); }
-
-/* Route map */
-.route-section { background: linear-gradient(180deg, transparent, rgba(232,194,117,0.05) 50%, transparent); }
-.route-map { background: #1F1611; border-color: #3D2E25; }
-.route-city { background: #1F1611; border-color: #E8C275; color: #F5EFE6; box-shadow: 0 2px 12px rgba(0,0,0,0.5); }
-.route-city-day { color: #E8C275; }
-.route-city-arrow { color: #E8C275; }
-
-/* Day sections */
-.day-1, .day-2, .day-3 { background: linear-gradient(180deg, #0E0805 0%, #18100A 100%); }
-.day-header::before { background: linear-gradient(180deg, transparent, #E8C275); }
-.day-header-tag { background: linear-gradient(135deg, #A02828, #6E1A1A); color: #F5EFE6; box-shadow: 0 4px 16px rgba(160,40,40,0.3); }
-.day-header-title { color: #F5EFE6; }
-.day-header-date { color: #E8C275; }
-.day-intro { color: #C9B89E; }
-
-/* Timeline */
-.timeline::before { background: linear-gradient(180deg, #3D2E25 0%, #E8C275 50%, #3D2E25 100%); }
-.timeline-marker::before { background: #1F1611; border-color: #E8C275; box-shadow: 0 0 0 4px #0E0805; }
-.timeline-marker-castle::before { background: #A02828; border-color: #6E1A1A; }
-.timeline-marker-food::before { background: #E8C275; border-color: #C8A464; }
-.timeline-marker-onsen::before { background: #4A8DAC; border-color: #2E6B8A; }
-.timeline-marker-history::before { background: #8C7A66; border-color: #5A4536; }
-.timeline-marker-hotel::before { background: #6B8E4E; border-color: #4A6B2E; }
-.timeline-time { color: #E8C275; }
-.timeline-title { color: #F5EFE6; }
-.timeline-stay { color: #C8A464; }
-.timeline-content p { color: #C9B89E; }
-.timeline-content strong { color: #F0D88C; }
-.timeline-highlight .timeline-content { background: #1F1611; border-color: #3D2E25; box-shadow: 0 4px 24px rgba(0,0,0,0.4); }
-.timeline-finale .timeline-content { background: linear-gradient(135deg, #1F1611 0%, #2A1F18 100%); border-color: #E8C275; }
-.timeline-badge { background: #E8C275; color: #0E0805; }
-.inline-link { color: #E8C275; }
-.inline-link:hover { color: #F0D88C; }
-.location-map { border-color: #3D2E25; }
-
-/* Food section */
-.food-section { background: linear-gradient(180deg, transparent, rgba(232,194,117,0.03)); }
-.food-block-head { border-bottom-color: #3D2E25; }
-.food-block-number { color: #E8C275; }
-.food-block-title { color: #F5EFE6; }
-.food-block-location { color: #E8C275; }
-.food-block-hint { color: #8C7A66; }
-.food-card { background: #1F1611; border-color: #3D2E25; }
-.food-card-top { background: linear-gradient(135deg, #1F1611 0%, #2A1F18 100%); border-color: #E8C275; }
-.food-card-summary[data-clickable="true"]:hover { background: rgba(232,194,117,0.05); }
-.food-card-summary[data-clickable="true"]::after { background: rgba(232,194,117,0.9); color: #0E0805; }
-.food-card-letter { background: #E8C275; color: #0E0805; box-shadow: 0 3px 10px rgba(232,194,117,0.4); }
-.food-card-top .food-card-letter { background: #F0D88C; }
-.food-card-tagline { color: #C8A464; }
-.food-card-title { color: #F5EFE6; }
-.food-card-shop { color: #E8C275; border-bottom-color: #3D2E25; }
-.food-card-shop small { color: #A89878; }
-.rating-badge.google { background: rgba(26,115,232,0.18); color: #6BA0FF; }
-.rating-badge.tabelog { background: rgba(214,90,27,0.18); color: #F08C5A; }
-.rating-badge.feature { background: rgba(232,194,117,0.2); color: #F0D88C; }
-.food-card-brief { color: #C9B89E; }
-.food-card-desc { color: #C9B89E; }
-.food-card-rec { background: rgba(14,8,5,0.6); border-left-color: #E8C275; color: #F5EFE6; }
-.food-card-rec strong { color: #F0D88C; }
-.food-card-toggle { background: rgba(232,194,117,0.06); border-top-color: #3D2E25; color: #E8C275; }
-.food-card-toggle:hover { background: rgba(232,194,117,0.16); }
-.food-card-toggle-icon { color: #E8C275; }
-.food-card-map { border-color: #3D2E25; }
-.food-card-photo { background-color: #18100A; }
-.food-card-photo-placeholder.food-photo-coffee { background: linear-gradient(135deg, #5A3E28 0%, #3A2818 100%); }
-.food-card-photo-placeholder.food-photo-noodle { background: linear-gradient(135deg, #8B5C2A 0%, #4A2818 100%); }
-.food-card-image { background-color: #18100A; }
-
-/* Amenity */
-.amenity-section { background: linear-gradient(180deg, transparent, rgba(232,194,117,0.04)); }
-.amenity-card { background: #1F1611; border-color: #3D2E25; }
-.amenity-card::before { background: linear-gradient(90deg, #E8C275, #A02828); }
-.amenity-card-ryokan::before { background: linear-gradient(90deg, #4A8DAC, #2E6B8A); }
-.amenity-card-day { color: #E8C275; }
-.amenity-card-title { color: #F5EFE6; }
-.amenity-card-room { color: #8C7A66; }
-.amenity-card-head { border-bottom-color: #3D2E25; }
-.amenity-group-title { color: #F0D88C; border-left-color: #E8C275; }
-.amenity-list li { color: #C9B89E; }
-.amenity-list li::before { color: #E8C275; }
-.amenity-card-link { background: #E8C275; color: #0E0805; }
-.amenity-card-link:hover { background: #F0D88C; color: #0E0805; }
-.amenity-card-ryokan .amenity-card-link { background: #5BA0C2; color: #0E0805; }
-.amenity-card-ryokan .amenity-card-link:hover { background: #7BB8D8; color: #0E0805; }
-.amenity-tip { background: linear-gradient(135deg, #1F1611 0%, #2A1F18 100%); border-color: #E8C275; }
-.amenity-tip p { color: #F5EFE6; }
-
-/* Tips */
-.tips-section { background: linear-gradient(180deg, transparent, rgba(232,194,117,0.03)); }
-.tips-card { background: #1F1611; border-color: #3D2E25; }
-.tips-card-title { color: #F5EFE6; }
-.tips-card-text { color: #C9B89E; }
-
-/* Closing */
-.closing-message { padding: 40px 20px; }
-.closing-frame { background: linear-gradient(135deg, #1F1611 0%, #2A1F18 100%); border-color: #E8C275; box-shadow: 0 16px 60px rgba(0,0,0,0.5); }
-.closing-frame::before, .closing-frame::after { border-color: #E8C275; }
-.closing-symbol { color: #E8C275; text-shadow: 0 0 30px rgba(232,194,117,0.4); }
-.closing-title { color: #F5EFE6; }
-.closing-text { color: #C9B89E; }
-.closing-divider span:not(.closing-divider-mark) { background: #E8C275; }
-.closing-divider-mark { color: #E8C275; }
-
-/* Footer */
-.footer { background: linear-gradient(135deg, #0E0805 0%, #000000 100%); border-top: 1px solid rgba(232,194,117,0.15); }
-.footer-logo-sub { color: rgba(232,221,208,0.6); }
-
-/* Back to top */
-.back-to-top { background: #E8C275; color: #0E0805; box-shadow: 0 4px 16px rgba(232,194,117,0.4); }
-.back-to-top:hover { background: #F0D88C; color: #0E0805; }
-
-/* Generic hover */
-.highlight-card:hover, .booking-card:hover, .food-card:hover, .tips-card:hover, .amenity-card:hover {
-  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
-  border-color: rgba(232,194,117,0.35);
-}
-
-/* Anchor link hover */
-a:hover { color: #F0D88C; }
-
-
-
-/* 寿マーク: 赤い丸 + 金色の文字 */
-.nav-logo-mark {
-  background: radial-gradient(circle at 30% 30%, #C44E4E 0%, #A02828 60%, #7A1F1F 100%) !important;
-  color: #E8C275 !important;
-  border: 1px solid rgba(232, 194, 117, 0.35);
-  box-shadow: 0 2px 12px rgba(160, 40, 40, 0.45), inset 0 0 8px rgba(80, 15, 15, 0.3);
-  font-weight: 800;
-}
-.footer-logo-mark {
-  background: radial-gradient(circle at 30% 30%, #C44E4E 0%, #A02828 60%, #7A1F1F 100%) !important;
-  color: #E8C275 !important;
-  border: 1px solid rgba(232, 194, 117, 0.4);
-  box-shadow: 0 4px 18px rgba(160, 40, 40, 0.5), inset 0 0 10px rgba(80, 15, 15, 0.3);
-  font-weight: 800;
-}
-
+.hero-slideshow .hero-pattern { z-index: 2; opacity: 0.4; }
+.hero-slideshow .hero-content { position: relative; z-index: 3; }
+.hero-slideshow .hero-scroll { z-index: 3; }
+.hero-slideshow .hero-meta-item { background: rgba(255, 255, 255, 0.82); }
+.hero-slideshow .hero-tag { background: rgba(255, 255, 255, 0.9); }
 </style>
 </head>
 <body>
-
-<!-- Opening Animation -->
-<div class="opening" id="opening" aria-hidden="true">
-  <div class="opening-letterbox opening-letterbox-top"></div>
-  <div class="opening-letterbox opening-letterbox-bottom"></div>
-  <div class="opening-content">
-    <div class="opening-mark-wrap">
-      <span class="opening-mark-line opening-mark-line-l"></span>
-      <span class="opening-symbol">寿</span>
-      <span class="opening-mark-line opening-mark-line-r"></span>
-    </div>
-    <div class="opening-label">祝　還暦</div>
-    <div class="opening-sub">OKAYAMA  ·  MAY  2026</div>
-  </div>
-  <div class="opening-skip">クリックでスキップ</div>
-</div>
-
 
 <div class="seigaiha-bg" aria-hidden="true"></div>
 
@@ -445,32 +87,14 @@ a:hover { color: #F0D88C; }
   </div>
 </nav>
 
-<header id="top" class="hero hero-slideshow-v3">
-  <div class="hero-cinema">
-    <div class="hero-slides">
-      <div class="hero-slide is-active" data-day="DAY 2" data-place="備中松山城 — 天空の城" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Bitchu_Matsuyama_Castle_1.JPG');"></div>
-      <div class="hero-slide" data-day="DAY 2" data-place="岡山城 — 烏城" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Okayama_castle.jpg');"></div>
-      <div class="hero-slide" data-day="DAY 3" data-place="津山城 — 巨石垣" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Tsuyama_Castle_Bitchuu-yagura.jpg');"></div>
-      <div class="hero-slide" data-day="DAY 2" data-place="湯原温泉 八景" style="background-image: url('https://hakkei-yubara.jp/wp-content/themes/mymedia/images/english/thumb_movie_pv_long01.jpg');"></div>
-      <div class="hero-slide" data-day="DAY 2" data-place="後楽園 — 日本三名園" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Okayama_Korakuen_Garden01.jpg');"></div>
-      <div class="hero-slide" data-day="DAY 3" data-place="勝山町並み 保存地区" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Mimasaka_Katsuyama_-01.jpg');"></div>
-    </div>
-    <div class="hero-letterbox hero-letterbox-top"></div>
-    <div class="hero-letterbox hero-letterbox-bottom">
-      <div class="hero-cinema-bar">
-        <div class="hero-cinema-meta">
-          <span class="hero-cinema-day" id="hero-day">DAY 2</span>
-          <span class="hero-cinema-divider">/</span>
-          <span class="hero-cinema-place" id="hero-place">備中松山城 — 天空の城</span>
-        </div>
-        <div class="hero-cinema-progress">
-          <span class="hero-cinema-count" id="hero-count">01 / 06</span>
-          <div class="hero-cinema-bar-line">
-            <div class="hero-cinema-bar-fill" id="hero-bar"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+<header id="top" class="hero hero-slideshow">
+  <div class="hero-slides">
+    <div class="hero-slide is-active" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Bitchu_Matsuyama_Castle_1.JPG');"></div>
+    <div class="hero-slide" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Okayama_castle.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Tsuyama_Castle_Bitchuu-yagura.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('https://hakkei-yubara.jp/wp-content/themes/mymedia/images/english/thumb_movie_pv_long01.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Okayama_Korakuen_Garden01.jpg');"></div>
+    <div class="hero-slide" style="background-image: url('https://commons.wikimedia.org/wiki/Special:FilePath/Mimasaka_Katsuyama_-01.jpg');"></div>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-pattern"></div>
@@ -1713,59 +1337,17 @@ a:hover { color: #F0D88C; }
 <button id="back-to-top" class="back-to-top" aria-label="トップへ戻る">▲</button>
 
 <script src="script.js"></script>
+
 <script>
-(function(){
-  const slides = document.querySelectorAll('.hero-slideshow-v3 .hero-slide');
-  const dayEl = document.getElementById('hero-day');
-  const placeEl = document.getElementById('hero-place');
-  const countEl = document.getElementById('hero-count');
-  const barEl = document.getElementById('hero-bar');
-  if (!slides.length) return;
-  const DURATION = 6000;
+(function() {
+  const slides = document.querySelectorAll('.hero-slide');
+  if (slides.length < 2) return;
   let i = 0;
-  let progressStart = Date.now();
-  function update(){
-    const s = slides[i];
-    if (dayEl) dayEl.textContent = s.dataset.day || '';
-    if (placeEl) placeEl.textContent = s.dataset.place || '';
-    if (countEl) countEl.textContent = String(i+1).padStart(2,'0') + ' / ' + String(slides.length).padStart(2,'0');
-    const meta = document.querySelector('.hero-cinema-meta');
-    if (meta){ meta.style.animation = 'none'; meta.offsetHeight; meta.style.animation = ''; }
-  }
-  function go(idx){
+  setInterval(() => {
     slides[i].classList.remove('is-active');
-    i = idx;
+    i = (i + 1) % slides.length;
     slides[i].classList.add('is-active');
-    update();
-    progressStart = Date.now();
-  }
-  // progress bar animation
-  function tick(){
-    const elapsed = Date.now() - progressStart;
-    const pct = Math.min(100, (elapsed / DURATION) * 100);
-    if (barEl) barEl.style.width = pct + '%';
-    requestAnimationFrame(tick);
-  }
-  setInterval(() => go((i+1) % slides.length), DURATION);
-  tick();
-  update();
-})();
-</script>
-<script>
-(function(){
-  const opening = document.getElementById('opening');
-  if (!opening) return;
-  document.body.classList.add('opening-active');
-  const finish = () => {
-    if (opening.classList.contains('is-leaving')) return;
-    opening.classList.add('is-leaving');
-    document.body.classList.remove('opening-active');
-    setTimeout(() => opening.classList.add('is-removed'), 1300);
-  };
-  // Auto-dismiss after 3.8 seconds (letterbox opens at 2.6s + 1.2s anim)
-  const autoTimer = setTimeout(finish, 3800);
-  // Click to skip
-  opening.addEventListener('click', () => { clearTimeout(autoTimer); finish(); });
+  }, 6000);
 })();
 </script>
 </body>
