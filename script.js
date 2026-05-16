@@ -146,3 +146,46 @@ document.querySelectorAll('.food-card-toggle').forEach(btn => {
     if (textEl) textEl.textContent = expanded ? '詳細・地図を見る' : '閉じる';
   });
 });
+
+// Equalize food card heights within each row (without affecting expand animation)
+function equalizeFoodCardHeights() {
+  if (window.matchMedia('(max-width: 640px)').matches) {
+    // Mobile: single column, no need to equalize
+    document.querySelectorAll('.food-card').forEach(c => { c.style.minHeight = ''; });
+    return;
+  }
+  document.querySelectorAll('.food-cards').forEach(grid => {
+    const cards = Array.from(grid.querySelectorAll('.food-card'));
+    cards.forEach(c => { c.style.minHeight = ''; });
+    // Wait a frame so reset takes effect, then measure
+    requestAnimationFrame(() => {
+      const rows = new Map();
+      cards.forEach(card => {
+        if (card.classList.contains('is-expanded')) return;
+        const top = Math.round(card.getBoundingClientRect().top);
+        if (!rows.has(top)) rows.set(top, []);
+        rows.get(top).push(card);
+      });
+      rows.forEach(rowCards => {
+        let maxH = 0;
+        rowCards.forEach(c => {
+          if (c.offsetHeight > maxH) maxH = c.offsetHeight;
+        });
+        rowCards.forEach(c => { c.style.minHeight = maxH + 'px'; });
+      });
+    });
+  });
+}
+
+let _equalizeTimer;
+function debouncedEqualize() {
+  clearTimeout(_equalizeTimer);
+  _equalizeTimer = setTimeout(equalizeFoodCardHeights, 120);
+}
+
+window.addEventListener('load', () => {
+  equalizeFoodCardHeights();
+  // Re-run after images likely loaded
+  setTimeout(equalizeFoodCardHeights, 800);
+});
+window.addEventListener('resize', debouncedEqualize);
