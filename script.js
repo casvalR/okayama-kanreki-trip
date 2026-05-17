@@ -7,11 +7,13 @@ function updateCountdown() {
   const daysEl = document.getElementById('days');
   const hoursEl = document.getElementById('hours');
   const minutesEl = document.getElementById('minutes');
+  const secondsEl = document.getElementById('seconds');
 
   if (diff <= 0) {
     if (daysEl) daysEl.textContent = '0';
     if (hoursEl) hoursEl.textContent = '0';
     if (minutesEl) minutesEl.textContent = '0';
+    if (secondsEl) secondsEl.textContent = '0';
     const label = document.querySelector('.countdown-label');
     if (label) label.textContent = '旅行中・お楽しみください';
     return;
@@ -20,14 +22,16 @@ function updateCountdown() {
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
   if (daysEl) daysEl.textContent = days;
   if (hoursEl) hoursEl.textContent = hours;
   if (minutesEl) minutesEl.textContent = minutes;
+  if (secondsEl) secondsEl.textContent = String(seconds).padStart(2, '0');
 }
 
 updateCountdown();
-setInterval(updateCountdown, 60000);
+setInterval(updateCountdown, 1000);
 
 // Mobile nav toggle
 const navToggle = document.querySelector('.nav-toggle');
